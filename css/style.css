@@ -8,7 +8,7 @@
 }
 
 html{
-  background-color: #ffe196;
+  background-color: #d4b5b0;
 }
 section h2 h1{
   font-family: "Monseratt", sans-serif;
@@ -121,26 +121,30 @@ textarea.contact-form-text{
   height:120px;
 }
 
-.contact-form-btn{
+.email-btn{
   float: right;
   border: 0;
-  background: #34495e;
-  padding: 12px 50px;
-  border-radius: 20px;
+  width: 70px;
+  height: auto;
+  /* background: #34495e; */
+  padding: 5px 10px;
+  /* border-radius: 20px; */
   cursor: pointer;
   transition: 0.5s;
 }
 
-.contact-form-btn:hover{
-  background: #2980b9;
+.email-btn:hover{
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
 }
 
-.smile-sticker{
+/* .smile-sticker{
   width: 3%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 /*developes.html*/
 
@@ -148,8 +152,11 @@ textarea.contact-form-text{
   /* background-color: #f3e1e1; */
   margin: 100px auto 100px auto;
   width: 50%;
-  text-align: left;
   padding-bottom: 200px;
+}
+
+.intro{
+  text-align: left;
 }
 
  /* .emiliano-container{
@@ -199,7 +206,57 @@ hr{
 
 /*gameInfo.html*/
 .rules{
-  margin: 100px auto 100px auto;
-  width: 50%;
+  text-align: center;
+  border: double;
+}
+
+.history-container{
+  position: relative;
   text-align: center;
 }
+
+.history-container img{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 150px;
+}
+
+.google-search{
+  text-align: center;
+  border-style: ridge;
+}
+
+.search-links-btn {
+    background-color: #2f2519;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown-links {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content-links {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content-links a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-links a:hover {background-color: #ddd;}
+
+.dropdown-links:hover .dropdown-content-links {display: block;}
+
+.dropdown-links:hover .search-links-btn {background-color: #4a3f35;}
