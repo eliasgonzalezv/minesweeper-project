@@ -13,8 +13,10 @@ var data = {
 function createBoard(rows, cols) {
   board.empty();
   for (let i = 0; i < rows; i++) {
-    // data.grid[i] = [];
+    data.grid[i] = [];
+
     var row = $("<div>").addClass("row");
+
     for (let j = 0; j < cols; j++) {
       var col = $("<div>")
         .addClass("col hidden")
@@ -24,7 +26,7 @@ function createBoard(rows, cols) {
       if (Math.random() < 0.1) {
         col.addClass("mine");
         //position [i][j] has a mine in it
-        // data.grid[i][j] = "M";
+        data.grid[i][j] = "M";
       }
       row.append(col);
     }
@@ -78,7 +80,11 @@ function reveal(xpos, ypos) {
 
     var key = `${x} ${y}`;
 
-    var mineCount = getMineCount(x, y); //Todo: implement
+    var mineCount = getMineCount(x, y);
+
+    data.grid[x][y] = mineCount;
+
+    console.log(data.grid);
 
     if (seen[key]) return;
 
@@ -88,7 +94,6 @@ function reveal(xpos, ypos) {
       return;
     }
 
-    e;
     cell.removeClass("hidden");
 
     if (mineCount) {
@@ -147,5 +152,26 @@ board.on("click", ".col.hidden", function () {
     if (isGameOver) gameOver(true);
   }
 });
+
+function loadSaved() {
+  board.empty();
+  for (let i = 0; i < data.grid.length; i++) {
+    var row = $("<div>").addClass("row");
+
+    for (let j = 0; j < data.grid.length; j++) {
+      var col = $("<div>").attr("data-row", i).attr("data-col", j);
+      if (data.grid[i][j]) {
+        var cell = $(".col");
+        //Either a bomb or revealed cell
+        if (data.grid[i][j] === "M") {
+          //Hide this cell and put a mine in it
+        }
+        //Show the cell and put the mine count in it
+        // In this case, the value of data.grid[i][j]
+      }
+      //The slot in grid[i][j] is empty which means we should hide this cell in the grid
+    }
+  }
+}
 
 restart();

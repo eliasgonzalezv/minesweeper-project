@@ -2,7 +2,12 @@ body {
   text-align: center;
 }
 
+#game-title {
+  font-size: 4em;
+}
+
 #board {
+  margin-top: 20px;
   border: 1px solid #333333;
   display: inline-block;
 }

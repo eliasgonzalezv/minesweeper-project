@@ -1,16 +1,15 @@
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+* {
   box-sizing: border-box;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   font-family: "Monseratt", sans-serif;
 }
 
-html{
+html {
   background-color: #d4b5b0;
 }
-section h2 h1{
+section h2 h1 {
   font-family: "Monseratt", sans-serif;
   text-align: center;
   height: 200px;
@@ -18,7 +17,7 @@ section h2 h1{
   font-size: 20px;
 }
 
-ul {
+.nav-list {
   list-style-type: none;
   overflow: hidden;
 }
@@ -31,7 +30,7 @@ a {
   text-align: center;
 }
 
-p{
+p {
   line-height: 2;
 }
 
@@ -43,7 +42,7 @@ p{
   text-decoration: none;
 }
 
-li a:hover{
+li a:hover {
   background-color: #34495e;
 }
 
@@ -56,7 +55,7 @@ li a:hover{
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content a {
@@ -67,20 +66,22 @@ li a:hover{
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #eeeeee;}
+.dropdown-content a:hover {
+  background-color: #eeeeee;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
 /*Contact.html*/
-.contact-section{
-  background-size:cover;
+.contact-section {
+  background-size: cover;
   /* background: #222629; */
   padding: 40px 0;
 }
 
-.contact-section h1{
+.contact-section h1 {
   text-align: center;
   color: black;
 }
@@ -92,17 +93,17 @@ li a:hover{
   margin: 40px auto;
 } */
 
-.contact-form{
+.contact-form {
   max-width: 600px;
   margin: auto;
   padding: 0 10px;
   overflow: hidden;
 }
 
-.contact-form-text{
+.contact-form-text {
   display: block;
   width: 100%;
-  box-sizing border-box;
+  box-sizing: border-box;
   margin: 16px 0;
   border: 0;
   background: #111;
@@ -112,16 +113,16 @@ li a:hover{
   transition: 0.5s;
 }
 
-.contact-form-text:hover{
-  box-shadow: : 0 0 10px 4px #34495e;
+.contact-form-text:hover {
+  box-shadow: 0 0 10px 4px #34495e;
 }
 
-textarea.contact-form-text{
+textarea.contact-form-text {
   resize: none;
-  height:120px;
+  height: 120px;
 }
 
-.email-btn{
+.email-btn {
   float: right;
   border: 0;
   width: 70px;
@@ -133,7 +134,7 @@ textarea.contact-form-text{
   transition: 0.5s;
 }
 
-.email-btn:hover{
+.email-btn:hover {
   -ms-transform: scale(1.2); /* IE 9 */
   -webkit-transform: scale(1.2); /* Safari 3-8 */
   transform: scale(1.2);
@@ -148,18 +149,18 @@ textarea.contact-form-text{
 
 /*developes.html*/
 
-.container{
+.container {
   /* background-color: #f3e1e1; */
   margin: 100px auto 100px auto;
   width: 50%;
   padding-bottom: 200px;
 }
 
-.intro{
+.intro {
   text-align: left;
 }
 
- /* .emiliano-container{
+/* .emiliano-container{
   background-color: #dddddd;
   margin: 100px auto 100px auto;
   width: 50%;
@@ -167,21 +168,21 @@ textarea.contact-form-text{
   padding-bottom: 200px;
 } */
 
-.J-img{
+.J-img {
   width: 250px;
   height: auto;
   float: left;
   margin-right: 30px;
 }
 
-.E-img{
+.E-img {
   width: 290px;
   height: auto;
   float: right;
   margin-left: 30px;
 }
 
-hr{
+hr {
   border-style: dotted none none;
   border-width: 5px;
   border-color: grey;
@@ -189,74 +190,95 @@ hr{
   margin: 100px auto;
 }
 
-.us{
+.us {
   margin: 100px auto 100px auto;
   width: 50%;
   text-align: center;
 }
 
-.our-img{
+.our-img {
   width: 500px;
 }
 
-.our-gif{
+.our-gif {
   width: 100px;
   margin-top: 10px;
 }
 
 /*gameInfo.html*/
-.rules{
+.rules {
   text-align: center;
   border: double;
 }
 
-.history-container{
+.rules h2 {
+  padding-bottom: 15px;
+}
+
+.rules-list {
+  line-height: 1.5rem;
+}
+
+.rules-list ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.history-container {
   position: relative;
   text-align: center;
 }
 
-.history-container img{
+.history-container img {
   padding-top: 10px;
   padding-bottom: 10px;
   width: 150px;
 }
 
-.google-search{
+.google-search {
   text-align: center;
   border-style: ridge;
 }
 
 .search-links-btn {
-    background-color: #2f2519;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+  background-color: #2f2519;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
 }
 
 .dropdown-links {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content-links {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown-content-links a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-.dropdown-content-links a:hover {background-color: #ddd;}
+.dropdown-content-links a:hover {
+  background-color: #ddd;
+}
 
-.dropdown-links:hover .dropdown-content-links {display: block;}
+.dropdown-links:hover .dropdown-content-links {
+  display: block;
+}
 
-.dropdown-links:hover .search-links-btn {background-color: #4a3f35;}
+.dropdown-links:hover .search-links-btn {
+  background-color: #4a3f35;
+}
+
+/* Game Styling */
