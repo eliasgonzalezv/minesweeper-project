@@ -30,9 +30,9 @@ body {
 }
 
 /* For testing purposes: Displays locations of bombs */
-/*.col.hidden.mine {
+.col.hidden.mine {
   background-color: red;
-} */
+}
 
 .col.hidden {
   background-color: #596259;
@@ -43,10 +43,22 @@ body {
   background-color: #eeeeee;
 }
 
+.col.hidden.flagged {
+  font-family: "FontAwesome";
+}
+.col.hidden.flagged::after {
+  content: "\f024";
+}
+
 .row:last-child .col {
   border-bottom: none;
 }
 
 .row .col:last-child {
   border-right: none;
+}
+
+#restart-btn {
+  display: block;
+  margin: 10px auto;
 }
