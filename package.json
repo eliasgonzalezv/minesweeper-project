@@ -1,0 +1,24 @@
+{
+  "name": "minesweeper-project",
+  "version": "1.0.0",
+  "description": "A minesweeper game website project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilianogv/minesweeper-project.git"
+  },
+  "author": "Emiliano Gonzalez & Jannatul Maisha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilianogv/minesweeper-project/issues"
+  },
+  "homepage": "https://github.com/emilianogv/minesweeper-project#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1"
+  }
+}
