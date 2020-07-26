@@ -12,7 +12,7 @@ $(document).ready(function () {
 
   // Starts up a new game once button is clicked
   $("#play-btn").on("click", function () {
-    this.hidden = true;
+    $(this).hide();
     $("#load-btn").hide();
     const opts = {
       rows: 10,
@@ -94,7 +94,7 @@ $(document).ready(function () {
   });
   //Load a game from the server
   $("#load-btn").on("click", async function () {
-    this.hidden = true;
+    $(this).hide();
     $("#play-btn").hide();
     fetch("/load")
       .then((response) => {

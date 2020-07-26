@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bonbon&family=El+Messiri:wght@500&family=Flavors&family=Philosopher&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Monseratt", sans-serif;
+  font-family: 'El Messiri', sans-serif;
 }
 
 html {
-  background-color: #d4b5b0;
+  background-color: #ffe3b7;
+  color: #362207;
 }
+
 section h2 h1 {
-  font-family: "Monseratt", sans-serif;
   text-align: center;
   height: 200px;
   color: white;
@@ -26,6 +27,7 @@ section h2 h1 {
   float: left;
   text-align: center;
 }
+
 a {
   text-align: center;
 }
@@ -36,14 +38,15 @@ p {
 
 .dropbtn {
   display: inline-block;
-  color: white;
+  color: black;
   text-align: center;
   padding: 14px 15px;
   text-decoration: none;
 }
 
 li a:hover {
-  background-color: #34495e;
+  background-color: #362207;
+  color: white;
 }
 
 .dropdown {
@@ -59,7 +62,7 @@ li a:hover {
 }
 
 .dropdown-content a {
-  color: grey;
+  color: #362207;
   padding: 14px 16px;
   text-decoration: none;
   display: block;
@@ -67,7 +70,7 @@ li a:hover {
 }
 
 .dropdown-content a:hover {
-  background-color: #eeeeee;
+  background-color: #857671;
 }
 
 .dropdown:hover .dropdown-content {
@@ -83,7 +86,7 @@ li a:hover {
 
 .contact-section h1 {
   text-align: center;
-  color: black;
+  color: #111d5e;
 }
 
 /* .border{
@@ -106,15 +109,19 @@ li a:hover {
   box-sizing: border-box;
   margin: 16px 0;
   border: 0;
-  background: #111;
+  background: #ff9234;
   padding: 20px 40px;
   outline: none;
-  color: #ddd;
+  color: #111d5e;
   transition: 0.5s;
 }
 
 .contact-form-text:hover {
   box-shadow: 0 0 10px 4px #34495e;
+}
+
+.contact-form label{
+  color: #111d5e;
 }
 
 textarea.contact-form-text {
@@ -221,9 +228,27 @@ hr {
 
 .rules-list ul {
   list-style-type: none;
-  overflow: hidden;
+  list-style-position: inside;
+  /* list-style-image: url("../images/bomb.png"); */
 }
 
+.rules-list ul li:before{
+  content: '';
+
+  display: inline-block;
+
+  height: 30px;
+
+  width: 30px;
+
+   background-size: 30px;
+
+  background-image: url("../images/bomb.png");
+
+  background-repeat: no-repeat;
+
+  margin-right: 5px;
+}
 .history-container {
   position: relative;
   text-align: center;
@@ -281,4 +306,35 @@ hr {
   background-color: #4a3f35;
 }
 
-/* Game Styling */
+/*Index style*/
+#play-btn {
+  margin-top: 100px;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 50px;
+  /* cursor: pointer; */
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  /* color: #fff; */
+  /* background-color: #362207; */
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #857671;
+}
+
+#play-btn:hover {background-color: #4e413b}
+
+#play-btn:active {
+  background-color: #4e413b;
+  box-shadow: 0 5px #857671;
+  transform: translateY(4px);
+}
+
+button{
+  background-color: #362207;
+  color: #fff;
+  padding: 10px 20px;
+  font-family: 'Bonbon', cursive;
+  cursor: pointer;
+}

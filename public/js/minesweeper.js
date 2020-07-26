@@ -240,7 +240,8 @@ class Minesweeper {
       msg = "YOU LOST";
       icon = "fas fa-bomb";
     }
-    console.log(msg);
+    // console.log(msg);
+    $("#game-title").text(msg);
     //Add the bomb icons to the cell
     $(".col.mine").append($("<i>").addClass(icon));
     // Reveal all cells
