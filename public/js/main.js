@@ -70,6 +70,7 @@ $(document).ready(function () {
   // Restart button action on click
 
   $("#restart-btn").on("click", function () {
+    $("#game-title").text("Minesweeper");
     const opts = {
       rows: 10,
       cols: 10,
