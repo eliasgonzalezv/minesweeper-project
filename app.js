@@ -4,11 +4,13 @@ const mysql = require("mysql");
 
 const session = require("express-session");
 
-const app = express();
-
 const fs = require("fs");
 
+const app = express();
+
 var savedGame;
+
+const port = process.env.PORT || 3000;
 
 // // Create the database connection
 // const con = mysql.createConnection({
@@ -54,6 +56,6 @@ app.get("/load", (req, res) => {
   res.json({ savedGame });
 });
 
-app.listen(3000, () => {
-  console.log("Server started on port 3000");
+app.listen(port, () => {
+  console.log("Server started on port " + port);
 });
