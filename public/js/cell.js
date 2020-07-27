@@ -3,7 +3,7 @@ class Cell {
     xPos,
     yPos,
     value = 0, //The value of a cell can be the number of adjacent mines,
-    // F for flagged or M for mine.
+    // M for mine.
     isRevealed = false,
     isMine = false,
     isFlagged = false,
@@ -20,8 +20,5 @@ class Cell {
 
   getCellElement() {
     return $(`.col.hidden[data-row="${this.xPos}"][data-col="${this.yPos}"]`);
-    // return document.querySelector(
-    //   `.col[data-row="${this.xPos}"][data-col="${this.yPos}"]`
-    // );
   }
 }

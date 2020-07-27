@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bonbon&family=El+Messiri:wght@500&family=Flavors&family=Philosopher&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&family=Flavors&family=Grenze+Gotisch&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -307,11 +307,11 @@ hr {
 }
 
 /*Index style*/
-#play-btn {
+.main-btn {
   margin-top: 100px;
   display: inline-block;
   padding: 15px 25px;
-  font-size: 50px;
+  font-size: 30px;
   /* cursor: pointer; */
   text-align: center;
   text-decoration: none;
@@ -323,18 +323,50 @@ hr {
   box-shadow: 0 9px #857671;
 }
 
-#play-btn:hover {background-color: #4e413b}
+.main-btn:hover {background-color: #4e413b}
 
-#play-btn:active {
+.main-btn:active {
   background-color: #4e413b;
   box-shadow: 0 5px #857671;
   transform: translateY(4px);
 }
 
+#load-btn{
+  margin-left: 30px;
+}
+
 button{
   background-color: #362207;
   color: #fff;
-  padding: 10px 20px;
-  font-family: 'Bonbon', cursive;
+  padding: 8px 10px;
+  font-family: 'Grenze Gotisch', cursive;
   cursor: pointer;
+}
+
+.play-save-btn {
+  transition-duration: 0.4s;
+  border-radius: 12px;
+  border: 2px solid #9c5518;
+  display: block;
+  margin: 10px auto;
+  font-size: 20px;
+}
+
+.play-save-btn:hover{
+  background-color: #d2c6b2;
+  color: black;
+}
+
+#save-btn{
+  font-size: 15px;
+}
+/*----might need some edit---*/
+
+#navbar{
+  position: relative;
+  }
+#login-btn{
+  position: absolute;
+  top: 8px;
+  right: 16px;
 }

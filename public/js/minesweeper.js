@@ -37,29 +37,6 @@ class Minesweeper {
     // this.save();
   }
 
-  // constructor(jsonData) {
-  //   let loadedData = JSON.parse(jsonData);
-  //   Object.assign(
-  //     this,
-  //     {
-  //       grid: [], //Array of Cell objects
-  //       minesFound: 0,
-  //       falseMines: 0,
-  //       playing: true,
-  //       movesMade: 0,
-  //       savedGame: false,
-  //       gameOptions: {
-  //         rows: 10,
-  //         cols: 10,
-  //         mines: 10,
-  //       },
-  //     },
-  //     { gameOptions: opts },
-  //     loadedData
-  //   );
-  //   this.loadSaved();
-  // }
-
   //Set up the grid
   populateGrid() {
     for (let r = 0; r < this.gameOptions["rows"]; r++) {
@@ -96,7 +73,7 @@ class Minesweeper {
       // increment if not.
       let cell = this.grid[rowIndex][colIndex];
 
-      if (!cell.isMine) {
+      if (!cell.isMine && !cell.isRevealed) {
         cell.isMine = true;
         cell.value = "M";
         assignedMines++;
@@ -126,14 +103,10 @@ class Minesweeper {
 
   showBoard() {
     const board = $("#board");
-    // const board = document.getElementById("board");
 
     board.empty();
-    // board.innerHTML = "";
 
-    // let content = "";
     for (let r = 0; r < this.gameOptions.rows; r++) {
-      // content += '<div class="row">';
       let row = $("<div>").addClass("row");
       for (let c = 0; c < this.gameOptions.cols; c++) {
         let col = $("<div>")
@@ -142,27 +115,21 @@ class Minesweeper {
           .attr("data-col", c);
         let cellObj = this.grid[r][c];
 
-        // let add_class = "";
         let txt = "";
 
         if (cellObj.isFlagged) {
-          // add_class = "fas fa-flag";
           col.addClass("fas fa-flag");
         } else if (cellObj.isRevealed) {
           col.removeClass("hidden");
           txt = !cellObj.isMine ? cellObj.value || "" : "";
         } else if (cellObj.isMine) {
-          // add_class = "mine";
           col.addClass("mine");
         }
         col.text(txt);
         row.append(col);
-        // content += `<div class="col hidden ${add_class}" data-row="${r}" data-col="${c}">${txt}</div>`;
       }
       board.append(row);
-      // content += "</div>";
     }
-    // board.innerHTML = content;
   }
 
   getAdjacentCells(row, col) {
@@ -230,7 +197,7 @@ class Minesweeper {
   //Check if the game is over
   gameOver(isWin) {
     let msg = "";
-    let icon = "";
+    var icon = "";
     const grid = this.grid;
 
     if (isWin) {
@@ -242,9 +209,30 @@ class Minesweeper {
     }
     // console.log(msg);
     $("#game-title").text(msg);
+    // Remove all flags at end of game
+    for (let i = 0; i < grid.length; i++) {
+      for (let j = 0; j < grid[i].length; j++) {
+        if (grid[i][j].isFlagged) {
+          this.flagCell(grid[i][j]);
+        }
+      }
+    }
+    // $(".col.hidden.mine").removeClass("fas fa-flag");
     //Add the bomb icons to the cell
-    $(".col.mine").append($("<i>").addClass(icon));
-    // Reveal all cells
+    // // Reveal all cells remaining
+    // for (let i = 0; i < grid.length; i++) {
+    //   for (let j = 0; j < grid[i].length; j++) {
+    //     if (!grid[i][j].isRevealed) {
+    //       if (grid[i][j].isMine) {
+    //         grid[i][j].getCellElement().append($("<i>").addClass(icon));
+    //       }
+    //       this.revealCell(grid[i][j]);
+    //     }
+    //   }
+    // }
+
+    $(".col.hidden.mine").append($("<i>").addClass(icon));
+
     $(".col:not(.mine)").html(function () {
       let cellElement = $(this);
       let gridCell = grid[cellElement.data("row")][cellElement.data("col")];
