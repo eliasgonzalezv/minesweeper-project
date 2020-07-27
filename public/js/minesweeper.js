@@ -60,9 +60,8 @@ class Minesweeper {
     this.showBoard();
   }
 
-  placeMines() {
+  placeMines(cellToSkip) {
     //Assign mines randomly
-
     let assignedMines = 0;
 
     while (assignedMines < this.gameOptions.mines) {
@@ -73,7 +72,9 @@ class Minesweeper {
       // increment if not.
       let cell = this.grid[rowIndex][colIndex];
 
-      if (!cell.isMine && !cell.isRevealed) {
+      // console.log(cellToSkip === cell);
+
+      if (!cell.isMine && !cell.isRevealed && cell !== cellToSkip) {
         cell.isMine = true;
         cell.value = "M";
         assignedMines++;

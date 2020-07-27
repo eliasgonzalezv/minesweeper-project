@@ -38,7 +38,7 @@ $(document).ready(function () {
         game.movesMade++;
         // $("#restart-btn").toggle();
       }
-      if (game.movesMade === 0) game.placeMines();
+      if (game.movesMade === 0) game.placeMines(gridCell);
       game.revealCell(gridCell);
       game.movesMade++;
       const isGameOver = $(".col.hidden").length === game.gameOptions.mines;
