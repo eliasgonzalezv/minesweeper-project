@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&family=Flavors&family=Grenze+Gotisch&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -44,7 +45,7 @@ p {
   text-decoration: none;
 }
 
-li a:hover {
+.dropdown a:hover {
   background-color: #362207;
   color: white;
 }
@@ -77,6 +78,165 @@ li a:hover {
   display: block;
 }
 
+/* Full-width input fields */
+.login-container input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#navbar {
+  position: relative;
+}
+
+#login-btn {
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 17px;
+}
+
+#login-btn:hover {
+  opacity: 0.8;
+}
+
+.loginForm-btn {
+  /* background-color: #4CAF50; */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  /* cursor: pointer; */
+  width: 100%;
+}
+
+.loginForm-btn:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+#cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #900d0d;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 2px 0 12px 0;
+  position: relative;
+}
+
+/* img.avatar {
+    width: 40%;
+    border-radius: 50%;
+} */
+.login-container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0)
+  }
+
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+
+  #cancelbtn {
+    width: 100%;
+  }
+}
+
+.rememberMe-checkbox {
+  display: block;
+  margin-top: 10px;
+}
+
 /*Contact.html*/
 .contact-section {
   background-size: cover;
@@ -95,7 +255,6 @@ li a:hover {
   background: #34495e;
   margin: 40px auto;
 } */
-
 .contact-form {
   max-width: 600px;
   margin: auto;
@@ -120,7 +279,7 @@ li a:hover {
   box-shadow: 0 0 10px 4px #34495e;
 }
 
-.contact-form label{
+.contact-form label {
   color: #111d5e;
 }
 
@@ -142,8 +301,10 @@ textarea.contact-form-text {
 }
 
 .email-btn:hover {
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  -ms-transform: scale(1.2);
+  /* IE 9 */
+  -webkit-transform: scale(1.2);
+  /* Safari 3-8 */
   transform: scale(1.2);
 }
 
@@ -153,9 +314,7 @@ textarea.contact-form-text {
   margin-left: auto;
   margin-right: auto;
 } */
-
 /*developes.html*/
-
 .container {
   /* background-color: #f3e1e1; */
   margin: 100px auto 100px auto;
@@ -174,7 +333,6 @@ textarea.contact-form-text {
   text-align: left;
   padding-bottom: 200px;
 } */
-
 .J-img {
   width: 250px;
   height: auto;
@@ -232,23 +390,17 @@ hr {
   /* list-style-image: url("../images/bomb.png"); */
 }
 
-.rules-list ul li:before{
+.rules-list ul li:before {
   content: '';
-
   display: inline-block;
-
   height: 30px;
-
   width: 30px;
-
-   background-size: 30px;
-
+  background-size: 30px;
   background-image: url("../images/bomb.png");
-
   background-repeat: no-repeat;
-
   margin-right: 5px;
 }
+
 .history-container {
   position: relative;
   text-align: center;
@@ -323,7 +475,9 @@ hr {
   box-shadow: 0 9px #857671;
 }
 
-.main-btn:hover {background-color: #4e413b}
+.main-btn:hover {
+  background-color: #4e413b
+}
 
 .main-btn:active {
   background-color: #4e413b;
@@ -331,11 +485,11 @@ hr {
   transform: translateY(4px);
 }
 
-#load-btn{
+#load-btn {
   margin-left: 30px;
 }
 
-button{
+button {
   background-color: #362207;
   color: #fff;
   padding: 8px 10px;
@@ -352,21 +506,11 @@ button{
   font-size: 20px;
 }
 
-.play-save-btn:hover{
+.play-save-btn:hover {
   background-color: #d2c6b2;
   color: black;
 }
 
-#save-btn{
+#save-btn {
   font-size: 15px;
-}
-/*----might need some edit---*/
-
-#navbar{
-  position: relative;
-  }
-#login-btn{
-  position: absolute;
-  top: 8px;
-  right: 16px;
 }
