@@ -29,7 +29,7 @@ section h2 h1 {
   text-align: center;
 }
 
-a {
+.dropdown a {
   text-align: center;
 }
 
@@ -78,16 +78,6 @@ p {
   display: block;
 }
 
-/* Full-width input fields */
-.login-container input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
 #navbar {
   position: relative;
 }
@@ -103,14 +93,21 @@ p {
 #login-btn:hover {
   opacity: 0.8;
 }
+/* Full-width input fields */
+.login-container input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
 .loginForm-btn {
-  /* background-color: #4CAF50; */
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
-  /* cursor: pointer; */
   width: 100%;
 }
 
@@ -127,7 +124,7 @@ p {
 
 /* Center the image and position the close button */
 .imgcontainer {
-  text-align: center;
+  /* text-align: center; */
   margin: 2px 0 12px 0;
   position: relative;
 }
@@ -136,6 +133,7 @@ p {
     width: 40%;
     border-radius: 50%;
 } */
+
 .login-container {
   padding: 16px;
 }
@@ -143,6 +141,14 @@ p {
 span.psw {
   float: right;
   padding-top: 16px;
+}
+
+.psw a{
+  text-decoration: none;
+}
+
+.psw a:hover{
+  text-decoration:underline;
 }
 
 /* The Modal (background) */
@@ -190,7 +196,7 @@ span.psw {
 
 .close:hover,
 .close:focus {
-  color: red;
+  color: #900d0d;
   cursor: pointer;
 }
 
@@ -320,6 +326,7 @@ textarea.contact-form-text {
   margin: 100px auto 100px auto;
   width: 50%;
   padding-bottom: 200px;
+  text-align: center;
 }
 
 .intro {
@@ -512,5 +519,5 @@ button {
 }
 
 #save-btn {
-  font-size: 15px;
+  font-size: 12px;
 }
