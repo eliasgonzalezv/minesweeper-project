@@ -83,30 +83,64 @@ $(document).ready(function () {
 
   $("#save-btn").on("click", async function () {
     game.savedGame = true;
-    var data = game;
-    var options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    };
-    const response = await fetch("/api/save", options);
-    const json = await response.json();
-    console.log(json);
+    //Only save games that are still in progress
+    if (game.playing) {
+      var data = game;
+
+      var options = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      };
+      const response = await fetch("/api/save", options);
+      const json = await response.json();
+      if (json.status == "success") {
+        alert("Game saved successfully");
+      }
+      // console.log(json);
+    } else {
+      alert("Cannot save completed games");
+    }
   });
   //Load a game from the server
   $("#load-btn").on("click", async function () {
-    $(this).hide();
-    $("#play-btn").hide();
+    // $(this).hide();
+    // $("#play-btn").hide();
+    var dropdown = $("#myLoadDropdown");
+    //Empty previous contents
+    dropdown.empty();
+    //Display dropdown
+    dropdown.toggleClass("show");
     fetch("/api/load")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        $("#board").toggle();
         //console.log(typeof data);
-        const jsonData = data;
+        // console.log(data);
+        const jsonData = data.GameData;
         // console.log(jsonData);
-        game = new Minesweeper({}, jsonData);
+        //Fill out drop down content
+        if (jsonData) {
+          for (let i = 0; i < jsonData.length; i++) {
+            let anchor = $("<a>").attr("href", "#").data("value", i);
+            anchor.text("Game " + (i + 1));
+            dropdown.append(anchor);
+          }
+          //Attach functionality to select the saved game represented
+          // by that anchor
+          $("#myLoadDropdown a").on("click", function () {
+            $("#load-btn").hide();
+            $("#play-btn").hide();
+            $("#board").toggle();
+            var clicked = $(this).data("value");
+            game = new Minesweeper({}, jsonData[clicked]);
+          });
+        } else {
+          dropdown.append(
+            $("<a>").attr("href", "#").text("You have no saved Games")
+          );
+        }
         // console.log(data);
         //game.showBoard();
       })
@@ -114,4 +148,18 @@ $(document).ready(function () {
         console.log(err);
       });
   });
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches(".drop-load-btn")) {
+      var dropdowns = document.getElementsByClassName("load-dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
 });

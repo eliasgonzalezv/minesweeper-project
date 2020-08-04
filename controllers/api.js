@@ -25,10 +25,10 @@ exports.save = async (req, res) => {
       );
 
       db.query(
-        "INSERT INTO game SET ?",
+        "INSERT INTO GameInfo SET ?",
         {
-          userID: decoded.id,
-          gameData: JSON.stringify(savedGame),
+          UserID: decoded.id,
+          GameData: JSON.stringify(savedGame),
         },
         (err, results) => {
           if (err) {
@@ -66,7 +66,7 @@ exports.load = async (req, res) => {
 
       //Get the JSON data from the DB
       db.query(
-        "SELECT gameData FROM game WHERE userID = ? ORDER BY gameID DESC LIMIT 1",
+        "SELECT GameData FROM GameInfo WHERE UserID = ? ORDER BY GameID DESC LIMIT 5",
         decoded.id,
         (err, results) => {
           if (err) {
@@ -74,12 +74,12 @@ exports.load = async (req, res) => {
           } else {
             // console.log(results);
 
-            let gameData = results[0].gameData;
+            let GameData = results;
 
             // console.log(gameData);
 
             //Send data to front end
-            return res.json({ gameData });
+            return res.json({ GameData });
           }
         }
       );

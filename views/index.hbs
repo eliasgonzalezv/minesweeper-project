@@ -23,7 +23,12 @@
     <h1 id="game-title">Minesweeper</h1>
     <button class="main-btn" id="play-btn" type="submit">Play</button>
     {{#if user}}
-    <button class="main-btn" id="load-btn">Load Saved Game</button>
+    <div class="load-dropdown">
+      <button class="main-btn drop-load-btn" id="load-btn">Load Saved Game</button>
+      <div id="myLoadDropdown" class="load-dropdown-content">
+        {{!-- Place holder for game list --}}
+      </div>
+    </div>
     {{/if}}
     <div id="board"></div>
     <div id="button-div">

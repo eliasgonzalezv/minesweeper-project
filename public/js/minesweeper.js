@@ -3,7 +3,7 @@ class Minesweeper {
     let loadedData;
     if (jsonData) {
       //console.log(jsonData);
-      loadedData = JSON.parse(jsonData.gameData); // Saved game
+      loadedData = JSON.parse(jsonData.GameData); // Saved game
       // console.log(loadedData);
     } else {
       loadedData = {};

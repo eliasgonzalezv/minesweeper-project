@@ -14,26 +14,26 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {
-      //Todo add functionality
-      return res.status(400).flash({
+      //Send a flash message
+      req.session.message = {
         message: "Please provide an email and password",
-      });
+      };
+      res.redirect("/");
     }
 
     db.query(
-      "SELECT * FROM gameuser WHERE email = ?",
+      "SELECT * FROM UserInfo WHERE UserEmail = ?",
       [email],
       async (err, results) => {
-        console.log(results);
+        // console.log(results);
         if (
           results.length < 1 ||
-          !(await bcrypt.compare(password, results[0].password))
+          !(await bcrypt.compare(password, results[0].UserPassword))
         ) {
-          res.status(401).send({
-            message: "Incorrect email or password.",
-          });
+          req.session.message = { message: "Incorrect email or password" };
+          res.redirect("/");
         } else {
-          const id = results[0].userID;
+          const id = results[0].UserID;
           //Set up jwt token
           const token = jwt.sign({ id: id }, process.env.JWT_SECRET, {
             expiresIn: process.env.JWT_EXPIRES_IN,
@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
           };
 
           res.cookie("jwt", token, cookieOptions);
-          res.status(200).redirect("/");
+          res.redirect("/");
         }
       }
     );
@@ -64,7 +64,7 @@ exports.register = (req, res) => {
 
   //Check if user already exist in db
   db.query(
-    "SELECT email FROM gameuser WHERE email = ?",
+    "SELECT UserEmail FROM UserInfo WHERE UserEmail = ?",
     [email],
     async (err, results) => {
       if (err) {
@@ -73,17 +73,15 @@ exports.register = (req, res) => {
 
       if (results.length > 0) {
         //There is an user already in db
-        return res.redirect("/register");
-        // , {
-        //   message: "Email is already in use.",
-        // });
+        return res.render("register", {
+          message: "Email is already in use",
+        });
       }
       //Check if passwords match.
       else if (password !== pswConfirm) {
-        return res.redirect("/register");
-        // , {
-        //   message: "Passwords do not match.",
-        // });
+        return res.render("register", {
+          message: "Passwords do not match",
+        });
       }
 
       //Ready to insert user
@@ -92,21 +90,17 @@ exports.register = (req, res) => {
       // console.log(hashedPassword);
 
       db.query(
-        "INSERT INTO gameuser SET ?",
+        "INSERT INTO UserInfo SET ?",
         {
-          name: name,
-          email: email,
-          password: hashedPassword,
+          UserName: name,
+          UserEmail: email,
+          UserPassword: hashedPassword,
         },
         (err, results) => {
           if (err) {
             console.log(err);
           } else {
-            return res.redirect("/register");
-            //  {
-            //   status: 200,
-            //   message: "User registered.",
-            // });
+            return res.render("register", { message: "User registered." });
           }
         }
       );
@@ -115,7 +109,6 @@ exports.register = (req, res) => {
 };
 
 exports.isLoggedIn = async (req, res, next) => {
-  // req.message = "Inside Middleware";
   // console.log(req.cookies);
 
   if (req.cookies.jwt) {
@@ -130,7 +123,7 @@ exports.isLoggedIn = async (req, res, next) => {
       //Check if user still exists
 
       db.query(
-        "SELECT * FROM gameuser WHERE userId = ?",
+        "SELECT * FROM UserInfo WHERE UserID = ?",
         [decoded.id],
         (error, result) => {
           // console.log(result);
