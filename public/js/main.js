@@ -121,7 +121,7 @@ $(document).ready(function () {
         const jsonData = data.GameData;
         // console.log(jsonData);
         //Fill out drop down content
-        if (jsonData) {
+        if (jsonData.length > 0) {
           for (let i = 0; i < jsonData.length; i++) {
             let anchor = $("<a>").attr("href", "#").data("value", i);
             anchor.text("Game " + (i + 1));
