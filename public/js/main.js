@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     var gridCell = game.grid[cellElement.data("row")][cellElement.data("col")];
 
-    if (!gridCell.isRevealed && game.playing) {
+    if (!gridCell.isRevealed && game.playing && !gridCell.isFlagged) {
       if (cellElement.hasClass("mine")) {
         game.gameOver(false);
         game.movesMade++;
@@ -89,22 +89,23 @@ $(document).ready(function () {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     };
-    const response = await fetch("/api", options);
+    const response = await fetch("/api/save", options);
     const json = await response.json();
-    // console.log(json);
+    console.log(json);
   });
   //Load a game from the server
   $("#load-btn").on("click", async function () {
     $(this).hide();
     $("#play-btn").hide();
-    fetch("/load")
+    fetch("/api/load")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         $("#board").toggle();
-        // console.log(typeof data);
+        //console.log(typeof data);
         const jsonData = data;
+        // console.log(jsonData);
         game = new Minesweeper({}, jsonData);
         // console.log(data);
         //game.showBoard();

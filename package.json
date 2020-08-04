@@ -2,10 +2,10 @@
   "name": "minesweeper-project",
   "version": "1.0.0",
   "description": "A minesweeper game website project",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,13 @@
   },
   "homepage": "https://github.com/emilianogv/minesweeper-project#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1"
   }
 }

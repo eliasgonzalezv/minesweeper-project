@@ -2,9 +2,9 @@ class Minesweeper {
   constructor(opts = {}, jsonData) {
     let loadedData;
     if (jsonData) {
-      console.log(jsonData);
-      loadedData = jsonData.savedGame; // Saved game
-      console.log(loadedData);
+      //console.log(jsonData);
+      loadedData = JSON.parse(jsonData.gameData); // Saved game
+      // console.log(loadedData);
     } else {
       loadedData = {};
     }

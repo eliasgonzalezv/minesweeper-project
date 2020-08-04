@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://kit.fontawesome.com/43ba0d891f.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/gamestyle.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&family=Flavors&family=Grenze+Gotisch&display=swap"
+    rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Minesweeper by Jem</title>
+</head>
+
+<body>
+  {{!-- <div id="nav-placeholder"></div> --}}
+  {{>navbar}}
+  <div class="container">
+    <h1 id="game-title">Minesweeper</h1>
+    <button class="main-btn" id="play-btn" type="submit">Play</button>
+    {{#if user}}
+    <button class="main-btn" id="load-btn">Load Saved Game</button>
+    {{/if}}
+    <div id="board"></div>
+    <div id="button-div">
+      <button class="play-save-btn" id="restart-btn" type="submit">Play Again</button>
+      {{#if user}}
+      <button class="play-save-btn" id="save-btn" type="submit">Save Game</button>
+    </div>
+    {{/if}}
+  </div>
+  {{!-- <script>
+    $.get("navbar.hbs", function (data) {
+      $("#nav-placeholder").replaceWith(data);
+    });
+  </script> --}}
+
+  <!-- <script src="game.js"></script> -->
+  <script src="js/main.js"></script>
+  <script src="js/minesweeper.js"></script>
+  <script src="js/cell.js"></script>
+</body>
+
+</html>
