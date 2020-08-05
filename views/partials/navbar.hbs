@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CS 355 Home Page</title>
   <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- <style>
      h1{
@@ -24,7 +25,7 @@
   <nav id="navbar">
     <ul class="nav-list">
       <li class="dropdown">
-        <a href="/" class="dropbtn">Home</a>
+        <a href="/" class="dropbtn"><i class="fa fa-home"></i></a>
         <div class="dropdown-content"></div>
       </li>
       <li class="dropdown">
@@ -83,13 +84,13 @@
             <div class="login-container">
               {{!-- Flash message --}}
               {{#if message}}
-              <h4>{{message.message}}</h4>
+              <h4 class="warning-msg"><i class="fa fa-warning"></i>{{message.message}}</h4>
               {{/if}}
               <label for="uname"><b>Email</b></label>
-              <input type="text" id="uname" placeholder="Enter Email" name="email" required>
+              <input class="login-input" type="text" id="uname" placeholder="Enter Email" name="email" required>
 
               <label for="psw"><b>Password</b></label>
-              <input type="password" id="psw" placeholder="Enter Password" name="password" required>
+              <input class="login-input" type="password" id="psw" placeholder="Enter Password" name="password" required>
 
               <button class="loginForm-btn" type="submit">Login</button>
               <label class="rememberMe-checkbox">

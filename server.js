@@ -40,7 +40,7 @@ app.use(
 //Middleware to send flash messages
 app.use((req, res, next) => {
   res.locals.message = req.session.message;
-  delete req.session.messages;
+  delete req.session.message;
   next();
 });
 

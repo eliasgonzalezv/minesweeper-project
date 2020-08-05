@@ -1,6 +1,6 @@
 # minesweeper-project
-A minesweeper game website project written in javascript
+A minesweeper game website project written in javascript.
 
-UI/UX styling https://github.com/JMaisha
+UI/UX styling, Front-End Development, Database Administration and Quality Assurance https://github.com/JMaisha
 
-Game Implementation and backend https://github.com/emilianogv
+Back-End Development, Server Administration and Application Deployment https://github.com/emilianogv
