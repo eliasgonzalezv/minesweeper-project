@@ -18,6 +18,7 @@ class Cell {
     });
   }
 
+//return html element that represent the specific cell at that x and y position
   getCellElement() {
     return $(`.col.hidden[data-row="${this.xPos}"][data-col="${this.yPos}"]`);
   }

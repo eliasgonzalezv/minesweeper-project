@@ -78,15 +78,13 @@ p {
   display: block;
 }
 
-#navbar {
-  position: relative;
-}
-
+/*Login Form*/
 #logout-btn {
   border-radius: 2px;
-  position: absolute;
-  top: 8px;
-  right: 16px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+  border: none;
   font-size: 17px;
 }
 
@@ -100,9 +98,10 @@ p {
 
 #login-btn {
   border-radius: 2px;
-  position: absolute;
-  top: 8px;
-  right: 16px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+  border: none;
   font-size: 17px;
 }
 
@@ -110,8 +109,7 @@ p {
   opacity: 0.8;
 }
 /* Full-width input fields */
-.login-container input[type="text"],
-input[type="password"] {
+.login-input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -340,7 +338,7 @@ textarea.contact-form-text {
 /*developes.html*/
 .container {
   /* background-color: #f3e1e1; */
-  margin: 100px auto 100px auto;
+  margin: 50px auto 100px auto;
   width: 50%;
   padding-bottom: 200px;
   text-align: center;
@@ -540,59 +538,53 @@ button {
 }
 
 /* Register Form */
-/* Pretty much useless */
-#register-div {
-  background-color: #ffe3b7;
-  display: -ms-flexbox;
-  display: -webkit-box;
+.warning-msg{
+  color: red;
+}
+
+#reg-msg{
+  margin-top: 50px;
+}
+
+#reg-header{
+  margin-top: 50px;
+}
+
+.reg-input-container{
   display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.form-register {
   width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+  margin-bottom: 15px;
 }
-.form-register .checkbox {
-  font-weight: 400;
-}
-.form-register .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
+
+.icon {
   padding: 10px;
-  font-size: 16px;
-}
-.form-register .form-control:focus {
-  z-index: 2;
-}
-
-.top {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  background: #362207;
+  color: white;
+  min-width: 50px;
+  text-align: center;
 }
 
-.middle {
-  border-radius: 0;
-  margin-bottom: -1px;
+.reg-input-field{
+  border: none;
+  width: 100%;
+  padding: 10px;
+  outline: none;
 }
 
-.bottom {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.reg-input-field:focus{
+  border: 2px solid #362207;
 }
 
+.reg-btn{
+  padding: 15px 20px;
+  border: none;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.reg-btn:hover {
+  opacity: 1;
+}
 /* Dropdown Load Button */
 .drop-load-btn {
   background-color: #4caf50;
