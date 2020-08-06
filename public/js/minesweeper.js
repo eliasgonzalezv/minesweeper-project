@@ -12,8 +12,7 @@ class Minesweeper {
     //game
     //console.log(loadedData);
     Object.assign(
-      this,
-      {
+      this, {
         grid: [], //Array of Cell objects
         minesFound: 0,
         falseMines: 0,
@@ -25,8 +24,9 @@ class Minesweeper {
           cols: 10,
           mines: 10,
         },
+      }, {
+        gameOptions: opts
       },
-      { gameOptions: opts },
       loadedData
     );
     if (this.savedGame === true) {
@@ -42,7 +42,10 @@ class Minesweeper {
     for (let r = 0; r < this.gameOptions["rows"]; r++) {
       this.grid[r] = [];
       for (let c = 0; c < this.gameOptions["cols"]; c++) {
-        this.grid[r].push(new Cell({ xPos: r, yPos: c }));
+        this.grid[r].push(new Cell({
+          xPos: r,
+          yPos: c
+        }));
       }
     }
 
@@ -91,7 +94,7 @@ class Minesweeper {
         if (!this.grid[r][c].isMine) {
           let mineCount = 0;
           let adjCells = this.getAdjacentCells(r, c);
-          for (let i = adjCells.length; i--; ) {
+          for (let i = adjCells.length; i--;) {
             if (adjCells[i].isMine) {
               mineCount++;
             }
@@ -120,6 +123,9 @@ class Minesweeper {
 
         if (cellObj.isFlagged) {
           col.addClass("fas fa-flag");
+          if (cellObj.isMine) {
+            col.addClass("mine");
+          }
         } else if (cellObj.isRevealed) {
           col.removeClass("hidden");
           txt = !cellObj.isMine ? cellObj.value || "" : "";
@@ -136,14 +142,10 @@ class Minesweeper {
   getAdjacentCells(row, col) {
     let results = [];
     for (
-      let rowPos = row > 0 ? -1 : 0;
-      rowPos <= (row < this.gameOptions.rows - 1 ? 1 : 0);
-      rowPos++
+      let rowPos = row > 0 ? -1 : 0; rowPos <= (row < this.gameOptions.rows - 1 ? 1 : 0); rowPos++
     ) {
       for (
-        let colPos = col > 0 ? -1 : 0;
-        colPos <= (col < this.gameOptions.cols - 1 ? 1 : 0);
-        colPos++
+        let colPos = col > 0 ? -1 : 0; colPos <= (col < this.gameOptions.cols - 1 ? 1 : 0); colPos++
       ) {
         results.push(this.grid[row + rowPos][col + colPos]);
       }
@@ -232,9 +234,9 @@ class Minesweeper {
     //   }
     // }
 
-    $(".col.hidden.mine").append($("<i>").addClass(icon));
-
-    $(".col:not(.mine)").html(function () {
+    // $(".col.hidden.mine").append($("<i>").addClass(icon));
+$(".col.hidden.mine").append($("<img>").attr("src","images/tomato.png"));
+    $(".col:not(.mine)").html(function() {
       let cellElement = $(this);
       let gridCell = grid[cellElement.data("row")][cellElement.data("col")];
       let mineCount = gridCell.value;
