@@ -7,9 +7,21 @@
   font-family: "El Messiri", sans-serif;
 }
 
-html {
-  background-color: #ffe3b7;
+html{
   color: #362207;
+}
+
+.page-body {
+  background-color: #dcedc1;
+  color: #362207;
+}
+
+#index-body{
+  background-image: url("../images/field.jpg");
+}
+
+#navbar{
+  font-weight: bold;
 }
 
 section h2 h1 {
@@ -93,7 +105,9 @@ p {
 }
 
 #logout-btn a {
+  color: white;
   text-decoration: none;
+  font-family: "Grenze Gotisch", cursive;
 }
 
 #login-btn {
@@ -415,10 +429,10 @@ hr {
 .rules-list ul li:before {
   content: "";
   display: inline-block;
-  height: 30px;
-  width: 30px;
-  background-size: 30px;
-  background-image: url("../images/bomb.png");
+  height: 25px;
+  width: 25px;
+  background-size: 25px;
+  background-image: url("../images/tomato.png");
   background-repeat: no-repeat;
   margin-right: 5px;
 }
@@ -485,30 +499,42 @@ hr {
   margin-top: 100px;
   display: inline-block;
   padding: 15px 25px;
-  font-size: 30px;
-  /* cursor: pointer; */
+  /* font-size: 30px; */
   text-align: center;
   text-decoration: none;
   outline: none;
   /* color: #fff; */
   /* background-color: #362207; */
+  background-color: #9a9958;
+  color: #362207;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #857671;
 }
 
+#play-btn{
+  /* background-color: #9a9958;
+  color: #362207; */
+  font-size: 50px;
+}
+
+/* #play-btn:hover {
+  background-color: #a1a079;
+} */
+
+#load-btn{
+  /* background-color: #9a9958;
+  color: #362207; */
+  font-size: 20px;
+}
 .main-btn:hover {
-  background-color: #4e413b;
+  background-color: #a1a079;
 }
 
 .main-btn:active {
   background-color: #4e413b;
   box-shadow: 0 5px #857671;
   transform: translateY(4px);
-}
-
-#load-btn {
-  margin-left: 30px;
 }
 
 button {
@@ -534,7 +560,7 @@ button {
 }
 
 #save-btn {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 /* Register Form */
@@ -586,22 +612,13 @@ button {
   opacity: 1;
 }
 /* Dropdown Load Button */
-.drop-load-btn {
-  background-color: #4caf50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.drop-load-btn:hover,
-.drop-load-btn:focus {
+/* #load-btn:hover,
+#load-btn:focus {
   background-color: #3e8e41;
-}
+} */
 
 .load-dropdown {
-  float: right;
+  margin-left: 30px;
   position: relative;
   display: inline-block;
 }
@@ -609,8 +626,8 @@ button {
 .load-dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  background-color: #857671;
+  min-width: 100%;
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   right: 0;

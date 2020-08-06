@@ -5,6 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
+
   <script src="https://kit.fontawesome.com/43ba0d891f.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="css/gamestyle.css" />
@@ -16,7 +21,7 @@
   <title>Minesweeper by Jem</title>
 </head>
 
-<body>
+<body class="page-body" id="index-body">
   {{!-- <div id="nav-placeholder"></div> --}}
   {{>navbar}}
   <div class="container">
@@ -24,7 +29,7 @@
     <button class="main-btn" id="play-btn" type="submit">Play</button>
     {{#if user}}
     <div class="load-dropdown">
-      <button class="main-btn drop-load-btn" id="load-btn">Load Saved Game</button>
+      <button class="main-btn" id="load-btn">Load Saved Game</button>
       <div id="myLoadDropdown" class="load-dropdown-content">
         {{!-- Place holder for game list --}}
       </div>

@@ -149,9 +149,9 @@ $(document).ready(function () {
       });
   });
 
-  // Close the dropdown if the user clicks outside of it
+  // Close the dropdown if the user clicks outside of it and shows the dropdown menu
   window.onclick = function (event) {
-    if (!event.target.matches(".drop-load-btn")) {
+    if (!event.target.matches("#load-btn")) {
       var dropdowns = document.getElementsByClassName("load-dropdown-content");
       var i;
       for (i = 0; i < dropdowns.length; i++) {
