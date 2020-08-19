@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <script src="https://kit.fontawesome.com/43ba0d891f.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/gamestyle.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&family=Flavors&family=Grenze+Gotisch&display=swap"
+    rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Minesweeper by Jem</title>
+</head>
+
+<body class="page-body" id="index-body">
+  {{!-- <div id="nav-placeholder"></div> --}}
+  {{>navbar}}
+  <div class="container">
+    <h1 id="game-title">Minesweeper</h1>
+    <button class="main-btn" id="play-btn" type="submit">Play</button>
+    {{#if user}}
+    <div class="load-dropdown">
+      <button class="main-btn" id="load-btn">Load Saved Game</button>
+      <div id="myLoadDropdown" class="load-dropdown-content">
+        {{!-- Place holder for game list --}}
+      </div>
+    </div>
+    {{/if}}
+    <div id="board"></div>
+    <div id="button-div">
+      <button class="play-save-btn" id="restart-btn" type="submit">Play Again</button>
+      {{#if user}}
+      <button class="play-save-btn" id="save-btn" type="submit">Save Game</button>
+    </div>
+    {{/if}}
+  </div>
+  {{!-- <script>
+    $.get("navbar.hbs", function (data) {
+      $("#nav-placeholder").replaceWith(data);
+    });
+  </script> --}}
+
+  <!-- <script src="game.js"></script> -->
+  <script src="js/main.js"></script>
+  <script src="js/minesweeper.js"></script>
+  <script src="js/cell.js"></script>
+</body>
+
+</html>

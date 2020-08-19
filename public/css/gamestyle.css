@@ -1,0 +1,55 @@
+#game-title {
+  font-size: 8em;
+  font-family: 'Flavors', cursive;
+}
+
+#board {
+  margin-top: 20px;
+  border: 1px solid #333333;
+  display: inline-block;
+}
+
+.row {
+  font-size: 0px;
+}
+
+.col {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  /*background-color that we see after
+  clicking the cell*/
+  background-color: #cfd186;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  vertical-align: top;
+  color: black;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+/* For testing purposes: Displays locations of bombs */
+/* .col.hidden.mine {
+  background-color: red;
+} */
+
+.col.mine img{
+  width: 35px;
+}
+
+.col.hidden {
+  background-color: #915b4a;
+  cursor: pointer;
+}
+
+.col.hidden:hover {
+  background-color: #cfd186;
+}
+
+.row:last-child .col {
+  border-bottom: none;
+}
+
+.row .col:last-child {
+  border-right: none;
+}

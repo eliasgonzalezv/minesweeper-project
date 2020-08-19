@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="page-body">
+  {{>navbar}}
+
+  <form action="/auth/register" class="form-register" method="POST" style="max-width:500px;margin:auto">
+
+    {{#if message}}
+      <h4 class="warning-msg" id="reg-msg"><i class="fa fa-warning"></i>{{message}}</h4>
+    {{/if}}
+
+    <h1 id="reg-header">Register</h1>
+
+    <div class="reg-input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="reg-input-field" type="text" id="inputName" class="" placeholder="Nickname" name="name" required autofocus>
+    </div>
+
+    <!-- <label for="inputName" class="">Your Name</label> -->
+    <div class="reg-input-container">
+      <i class="fa fa-envelope icon"></i>
+      <input class="reg-input-field" type="email" id="inputEmail" class="" placeholder="Email address" name="email" required>
+    </div>
+
+    <div class="reg-input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="reg-input-field" type="password" id="inputPassword" class="" placeholder="Password" name="password" required>
+    </div>
+
+    <div class="reg-input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="reg-input-field" type="password" id="confPassword" class="" placeholder="Re-enter Password" name="pswConfirm" required>
+    </div>
+
+    <!-- <label for="inputEmail" class="">Email address</label> -->
+
+    <!-- <label for="inputPassword" class="">Password</label> -->
+
+    <!-- <label for="confPassword" class="">Confirm Password</label> -->
+
+    <button class="reg-btn" type="submit">Register</button>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

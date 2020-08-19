@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS 355 Home Page</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <style>
+     h1{
+        padding-top: 20%;
+        color: #f9f9f9;
+        text-align: center;
+     }
+     p{
+        color: #f9f9f9;
+     }
+  </style> -->
+</head>
+
+<body class="page-body">
+  <!-- NAVBAR BEGINS HERE-->
+  <nav id="navbar">
+    <ul class="nav-list">
+      <li class="dropdown">
+        <a href="/" class="dropbtn"><i class="fa fa-home"></i></a>
+        <div class="dropdown-content"></div>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">About</a>
+        <div class="dropdown-content">
+          <a href="/gameInfo">About The Game</a>
+          <a href="/developers">About The Developers</a>
+          <a href="/contact">Contact Us</a>
+        </div>
+      </li>
+      <!-- <li class="dropdown">
+          <a href="#" class="dropbtn">Browser</a>
+          <div class="dropdown-content">
+             <a href="navigator.html">Navigator</a>
+             <a href="window.html">Window</a>
+             <a href="screen.html">Screen</a>
+             <a href="location.html">Location</a>
+             <a href="geolocation.html">Geolocation</a>
+          </div>
+        </li> -->
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Search</a>
+        <div class="dropdown-content">
+          <a
+            href="https://www.google.com/search?gs_ssp=eJzj4tDP1TewLMkoNGD04s7NzEstLk9NLUgtAgBUWwe-&q=minesweeper&rlz=1C1CHBF_enUS889US889&oq=mine&aqs=chrome.2.69i57j46l2j0l4j69i60.3884j0j8&sourceid=chrome&ie=UTF-8">Google
+            Minesweeper</a>
+        </div>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Other sites to play Minesweeper</a>
+        <div class="dropdown-content">
+          <a href="http://minesweeperonline.com/">Link to MinesweeperOnline</a>
+          <a href="https://cardgames.io/minesweeper/">Link to Cardgames.io</a>
+          <a href="https://testdrive-archive.azurewebsites.net/Performance/Minesweeper/">Link to Minesweeper the
+            Benchmark!</a>
+        </div>
+      </li>
+
+      <li>
+        {{#if user}}
+        <button id="logout-btn"> <a href="/auth/logout">Logout</a></button>
+        {{else}}
+        <button id="login-btn" onclick="document.getElementById('id01').style.display='block'"
+          style="width:auto;">Login</button>
+
+        <div id="id01" class="modal">
+
+          <form action='/auth/login' class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+              <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+            </div>
+
+            <div class="login-container">
+              {{!-- Flash message --}}
+              {{#if message}}
+              <h4 class="warning-msg"><i class="fa fa-warning"></i>{{message.message}}</h4>
+              {{/if}}
+              <label for="uname"><b>Email</b></label>
+              <input class="login-input" type="text" id="uname" placeholder="Enter Email" name="email" required>
+
+              <label for="psw"><b>Password</b></label>
+              <input class="login-input" type="password" id="psw" placeholder="Enter Password" name="password" required>
+
+              <button class="loginForm-btn" type="submit">Login</button>
+              <label class="rememberMe-checkbox">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+
+            <div class="login-container" style="background-color:#f1f1f1">
+              <button class="loginForm-btn" type="button" onclick="document.getElementById('id01').style.display='none'"
+                id="cancelbtn">Cancel</button>
+              <span class="psw"><a href="/register">Don't have an account? Register</a></span>
+            </div>
+          </form>
+          {{/if}}
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!--NAVBAR ENDS HERE-->
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>
